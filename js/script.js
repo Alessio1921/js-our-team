@@ -32,7 +32,14 @@ const team = [
 ];
 
 for (let i = 0; i < team.length; i++) {
+  const container=document.querySelector(".row");
+  const newDiv = document.createElement("div");
+  newDiv.classList.add("col", "m-5");
+  container.appendChild(newDiv);
+
   for(let key in team[i]){
     console.log(key , ":",team[i][key])
+    newDiv.innerHTML+=` ${key} : 
+    ${team[i][key]}<br>`;
   }
 }
