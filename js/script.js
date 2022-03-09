@@ -34,11 +34,17 @@ const team = [
 for (let i = 0; i < team.length; i++) {
   const container=document.querySelector(".row");
   const newDiv = document.createElement("div");
+  const newImg= document.createElement("img");
+  newImg.src=`img/${team[i].image}`;
+  newImg.classList.add("img-fluid");
   newDiv.classList.add("col", "m-5");
   container.appendChild(newDiv);
+  newDiv.appendChild(newImg);
+  console.log(newImg);
 
   for(let key in team[i]){
     console.log(key , ":",team[i][key])
+
     newDiv.innerHTML+=` ${key} : 
     ${team[i][key]}<br>`;
   }
