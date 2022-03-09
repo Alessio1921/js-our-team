@@ -35,17 +35,22 @@ for (let i = 0; i < team.length; i++) {
   const container=document.querySelector(".row");
   const newDiv = document.createElement("div");
   const newImg= document.createElement("img");
+  const newText=document.createElement("div");
   newImg.src=`img/${team[i].image}`;
-  newImg.classList.add("img-fluid");
-  newDiv.classList.add("col", "m-5");
+  newImg.alt=`photo of ${team[i].name}`;
+  newImg.classList.add("img-fluid", "rounded-3");
+  newDiv.classList.add("col", "p-5");
+  newText.classList.add("bg-secondary","rounded-3","mt-1", "text-capitalize","px-1", "text")
   container.appendChild(newDiv);
   newDiv.appendChild(newImg);
+  newDiv.appendChild(newText);
+
   console.log(newImg);
 
   for(let key in team[i]){
     console.log(key , ":",team[i][key])
 
-    newDiv.innerHTML+=` ${key} : 
+    newText.innerHTML+=` ${key} : 
     ${team[i][key]}<br>`;
   }
 }
